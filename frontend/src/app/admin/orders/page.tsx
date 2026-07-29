@@ -78,7 +78,7 @@ export default function AdminOrdersPage() {
         </Select>
       </div>
 
-      <div className="mt-6 rounded-xl border border-border-subtle bg-surface">
+      <div className="mt-6 overflow-x-auto rounded-xl border border-border-subtle bg-surface">
         <Table>
           <TableHeader>
             <TableRow>

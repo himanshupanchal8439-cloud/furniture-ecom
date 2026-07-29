@@ -124,14 +124,14 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
         </SheetContent>
       </Sheet>
 
-      <div className="flex min-h-screen flex-1 flex-col">
+      <div className="flex min-h-screen min-w-0 flex-1 flex-col">
         <header className="flex items-center gap-3 border-b border-border-subtle bg-surface px-4 py-4 md:hidden">
           <Button variant="ghost" size="icon-sm" onClick={() => setMobileNavOpen(true)}>
             <Menu size={20} />
           </Button>
           <span className="font-serif-display text-lg">MAISON Admin</span>
         </header>
-        <main className="flex-1 p-4 md:p-8">{children}</main>
+        <main className="min-w-0 flex-1 p-4 md:p-8">{children}</main>
       </div>
       <Toaster />
     </div>

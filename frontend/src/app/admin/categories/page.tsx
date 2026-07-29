@@ -137,7 +137,7 @@ export default function AdminCategoriesPage() {
         </Button>
       </div>
 
-      <div className="mt-6 rounded-xl border border-border-subtle bg-surface">
+      <div className="mt-6 overflow-x-auto rounded-xl border border-border-subtle bg-surface">
         <Table>
           <TableHeader>
             <TableRow>
