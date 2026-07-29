@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { CartDrawer } from "@/components/layout/cart-drawer";
 import { QuickViewModal } from "@/components/product/quick-view-modal";
 
 export function SiteChrome() {
@@ -12,6 +13,7 @@ export function SiteChrome() {
   return (
     <>
       <Navbar />
+      <CartDrawer />
       <QuickViewModal />
     </>
   );

@@ -8,7 +8,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Heart, Menu, Search, ShoppingBag, User, X } from "lucide-react";
 import { MEGA_MENU } from "@/lib/nav-data";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { CartDrawer } from "@/components/layout/cart-drawer";
 import { useCartCount } from "@/store/cart-store";
 import { useWishlistStore } from "@/store/wishlist-store";
 import { useUiStore } from "@/store/ui-store";
@@ -46,13 +45,13 @@ export function Navbar() {
   };
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-40 border-b transition-colors duration-300",
-        scrolled ? "border-border-subtle bg-background/90 backdrop-blur-md" : "border-transparent bg-background"
-      )}
-      onMouseLeave={() => setActiveMenu(null)}
-    >
+    <header className="sticky top-0 z-40" onMouseLeave={() => setActiveMenu(null)}>
+      <div
+        className={cn(
+          "border-b transition-colors duration-300",
+          scrolled ? "border-border-subtle bg-background/90 backdrop-blur-md" : "border-transparent bg-background"
+        )}
+      >
       <div className="hidden bg-walnut text-white md:block">
         <div className="container-page flex items-center justify-end gap-6 py-1.5 text-xs font-medium">
           <Link href="#" className="hover:underline">Gift Cards</Link>
@@ -141,6 +140,7 @@ export function Navbar() {
             <ThemeToggle />
           </div>
         </div>
+      </div>
       </div>
 
       {/* Search bar */}
@@ -284,7 +284,6 @@ export function Navbar() {
         )}
       </AnimatePresence>
 
-      <CartDrawer />
     </header>
   );
 }
