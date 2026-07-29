@@ -58,17 +58,17 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-9 flex gap-4"
+          className="mt-9 flex flex-col gap-3 sm:flex-row sm:gap-4"
         >
           <Link
             href="/products"
-            className="rounded-full bg-walnut px-7 py-3.5 text-sm font-bold text-white shadow-lg transition-transform hover:scale-105"
+            className="whitespace-nowrap rounded-full bg-walnut px-7 py-3.5 text-center text-sm font-bold text-white shadow-lg transition-transform hover:scale-105"
           >
             Shop Now
           </Link>
           <Link
             href="/products?category=living-room"
-            className="rounded-full border border-white/60 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white/10"
+            className="whitespace-nowrap rounded-full border border-white/60 px-7 py-3.5 text-center text-sm font-medium text-white transition-colors hover:bg-white/10"
           >
             Explore Living Room
           </Link>
