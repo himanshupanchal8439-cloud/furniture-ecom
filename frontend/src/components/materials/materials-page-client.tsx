@@ -8,6 +8,7 @@ import { api } from "@/lib/api";
 import { MaterialCard } from "@/components/materials/material-card";
 import { ComparisonTable } from "@/components/materials/comparison-table";
 import { cn } from "@/lib/utils";
+import { useBodyScrollLock } from "@/lib/use-body-scroll-lock";
 import type { MaterialFilters } from "@/lib/types";
 
 const TYPE_OPTIONS: { value: MaterialFilters["type"] | "all"; label: string }[] = [
@@ -28,6 +29,7 @@ export function MaterialsPageClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  useBodyScrollLock(mobileFiltersOpen);
 
   const filters: MaterialFilters = useMemo(
     () => ({

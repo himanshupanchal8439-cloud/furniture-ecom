@@ -7,6 +7,7 @@ import { Minus, Plus, X } from "lucide-react";
 import { useUiStore } from "@/store/ui-store";
 import { useCartStore } from "@/store/cart-store";
 import { formatPrice } from "@/lib/utils";
+import { useBodyScrollLock } from "@/lib/use-body-scroll-lock";
 
 export function CartDrawer() {
   const isOpen = useUiStore((s) => s.isCartOpen);
@@ -15,6 +16,7 @@ export function CartDrawer() {
   const updateQuantity = useCartStore((s) => s.updateQuantity);
   const removeLine = useCartStore((s) => s.removeLine);
   const subtotal = lines.reduce((sum, l) => sum + l.unitPrice * l.quantity, 0);
+  useBodyScrollLock(isOpen);
 
   return (
     <AnimatePresence>

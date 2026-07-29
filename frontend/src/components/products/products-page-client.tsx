@@ -9,6 +9,7 @@ import { MEGA_MENU } from "@/lib/nav-data";
 import { FILTER_COLORS, FILTER_MATERIALS, PRICE_MAX } from "@/lib/filter-data";
 import { ProductCard } from "@/components/product/product-card";
 import { cn } from "@/lib/utils";
+import { useBodyScrollLock } from "@/lib/use-body-scroll-lock";
 import type { ProductFilters } from "@/lib/types";
 
 const SORT_OPTIONS: { value: NonNullable<ProductFilters["sort"]>; label: string }[] = [
@@ -21,6 +22,7 @@ export function ProductsPageClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  useBodyScrollLock(mobileFiltersOpen);
 
   const filters: ProductFilters = useMemo(
     () => ({

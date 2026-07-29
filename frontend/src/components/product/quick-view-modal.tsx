@@ -11,6 +11,7 @@ import { formatPrice, cn } from "@/lib/utils";
 import { useQuickViewStore } from "@/store/quick-view-store";
 import { useCartStore } from "@/store/cart-store";
 import { useUiStore } from "@/store/ui-store";
+import { useBodyScrollLock } from "@/lib/use-body-scroll-lock";
 
 export function QuickViewModal() {
   const slug = useQuickViewStore((s) => s.slug);
@@ -18,6 +19,7 @@ export function QuickViewModal() {
   const addLine = useCartStore((s) => s.addLine);
   const openCart = useUiStore((s) => s.openCart);
   const [selectedVariantId, setSelectedVariantId] = useState<string | null>(null);
+  useBodyScrollLock(!!slug);
 
   const { data: product, isLoading } = useQuery({
     queryKey: ["product", slug],
