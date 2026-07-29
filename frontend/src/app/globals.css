@@ -126,6 +126,7 @@ html {
 body {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 ::selection {

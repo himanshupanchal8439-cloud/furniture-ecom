@@ -27,7 +27,7 @@ export function Newsletter() {
             e.preventDefault();
             setSubmitted(true);
           }}
-          className="mt-8 flex w-full max-w-md gap-2"
+          className="mt-8 flex w-full max-w-md flex-col gap-2 sm:flex-row"
         >
           <input
             type="email"
@@ -35,7 +35,7 @@ export function Newsletter() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Your email address"
-            className="flex-1 rounded-full border border-white/25 bg-transparent px-5 py-3 text-sm outline-none placeholder:text-white/50 focus:border-white/60"
+            className="min-w-0 flex-1 rounded-full border border-white/25 bg-transparent px-5 py-3 text-sm outline-none placeholder:text-white/50 focus:border-white/60"
           />
           <button
             type="submit"

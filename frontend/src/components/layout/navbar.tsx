@@ -59,17 +59,17 @@ export function Navbar() {
         </div>
       </div>
 
-      <div className="container-page flex items-center justify-between py-4">
-        <div className="flex items-center gap-8">
+      <div className="container-page flex items-center justify-between gap-2 py-4">
+        <div className="flex min-w-0 items-center gap-2 md:gap-8">
           <button
-            className="p-1 md:hidden"
+            className="shrink-0 p-1 md:hidden"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
             <Menu size={22} />
           </button>
 
-          <Link href="/" className="font-serif-display text-2xl tracking-wide">
+          <Link href="/" className="shrink-0 font-serif-display text-xl tracking-wide md:text-2xl">
             MAISON
           </Link>
 
@@ -96,18 +96,18 @@ export function Navbar() {
           </nav>
         </div>
 
-        <div className="flex items-center gap-1">
+        <div className="flex shrink-0 items-center gap-0.5 sm:gap-1">
           <button
             aria-label="Search"
             onClick={() => setSearchOpen((v) => !v)}
-            className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-surface-muted"
+            className="flex h-8 w-8 items-center justify-center rounded-full hover:bg-surface-muted sm:h-9 sm:w-9"
           >
             <Search size={18} />
           </button>
           <Link
             href="/wishlist"
             aria-label="Wishlist"
-            className="relative flex h-9 w-9 items-center justify-center rounded-full hover:bg-surface-muted"
+            className="relative hidden h-8 w-8 items-center justify-center rounded-full hover:bg-surface-muted sm:flex sm:h-9 sm:w-9"
           >
             <Heart size={18} />
             {wishlistCount > 0 && (
@@ -119,14 +119,14 @@ export function Navbar() {
           <Link
             href="/account"
             aria-label={accessToken ? "My Account" : "Log In"}
-            className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-surface-muted"
+            className="flex h-8 w-8 items-center justify-center rounded-full hover:bg-surface-muted sm:h-9 sm:w-9"
           >
             <User size={18} />
           </Link>
           <button
             aria-label="Cart"
             onClick={openCart}
-            className="relative flex h-9 w-9 items-center justify-center rounded-full hover:bg-surface-muted"
+            className="relative flex h-8 w-8 items-center justify-center rounded-full hover:bg-surface-muted sm:h-9 sm:w-9"
           >
             <ShoppingBag size={18} />
             {cartCount > 0 && (
@@ -135,7 +135,9 @@ export function Navbar() {
               </span>
             )}
           </button>
-          <ThemeToggle />
+          <div className="hidden sm:block">
+            <ThemeToggle />
+          </div>
         </div>
       </div>
 
@@ -263,6 +265,15 @@ export function Navbar() {
                     className="block rounded-lg px-3 py-3 text-sm hover:bg-surface-muted"
                   >
                     Material Lookbook
+                  </Link>
+                </li>
+                <li className="sm:hidden">
+                  <Link
+                    href="/wishlist"
+                    onClick={() => setMobileOpen(false)}
+                    className="block rounded-lg px-3 py-3 text-sm hover:bg-surface-muted"
+                  >
+                    Wishlist {wishlistCount > 0 ? `(${wishlistCount})` : ""}
                   </Link>
                 </li>
               </ul>
