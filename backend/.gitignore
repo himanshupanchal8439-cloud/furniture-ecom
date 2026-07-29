@@ -1,0 +1,15 @@
+# env
+.env
+.env.*
+!.env.example
+
+# venv
+.venv/
+__pycache__/
+*.pyc
+
+# testing
+.pytest_cache/
+
+# alembic
+*.sqlite3
