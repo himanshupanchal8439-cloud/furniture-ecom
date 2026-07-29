@@ -143,7 +143,7 @@ export function MaterialsPageClient() {
         </p>
       </div>
 
-      <div className="mb-8 mt-6 flex items-end justify-between">
+      <div className="mb-8 mt-6 flex flex-wrap items-end justify-between gap-3">
         <h2 className="font-serif-display text-lg">{data ? `${data.total} Materials` : "Materials"}</h2>
         <div className="flex items-center gap-3">
           <button

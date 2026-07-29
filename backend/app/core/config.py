@@ -14,6 +14,10 @@ class Settings(BaseSettings):
 
     frontend_origin: str = "http://localhost:3000"
 
+    @property
+    def frontend_origins(self) -> list[str]:
+        return [o.strip() for o in self.frontend_origin.split(",") if o.strip()]
+
     stripe_secret_key: str | None = None
     stripe_webhook_secret: str | None = None
     razorpay_key_id: str | None = None

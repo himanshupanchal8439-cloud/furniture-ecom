@@ -60,9 +60,9 @@ export function Navbar() {
       </div>
 
       <div className="container-page flex items-center justify-between gap-2 py-4">
-        <div className="flex min-w-0 items-center gap-2 md:gap-8">
+        <div className="flex min-w-0 items-center gap-2 lg:gap-8">
           <button
-            className="shrink-0 p-1 md:hidden"
+            className="shrink-0 p-1 lg:hidden"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
@@ -73,7 +73,7 @@ export function Navbar() {
             MAISON
           </Link>
 
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav className="hidden items-center gap-1 lg:flex">
             {MEGA_MENU.map((cat) => (
               <div key={cat.slug} onMouseEnter={() => setActiveMenu(cat.slug)}>
                 <Link
@@ -175,7 +175,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className="absolute inset-x-0 top-full hidden border-b border-border-subtle bg-surface shadow-lg md:block"
+            className="absolute inset-x-0 top-full hidden border-b border-border-subtle bg-surface shadow-lg lg:block"
           >
             {MEGA_MENU.filter((c) => c.slug === activeMenu).map((cat) => (
               <div key={cat.slug} className="container-page grid grid-cols-4 gap-10 py-10">
@@ -221,7 +221,7 @@ export function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 bg-black/40 md:hidden"
+              className="fixed inset-0 z-50 bg-black/40 lg:hidden"
               onClick={() => setMobileOpen(false)}
             />
             <motion.aside
@@ -229,7 +229,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed left-0 top-0 z-50 h-full w-72 bg-surface p-6 shadow-2xl md:hidden"
+              className="fixed left-0 top-0 z-50 h-full w-72 bg-surface p-6 shadow-2xl lg:hidden"
             >
               <div className="mb-6 flex items-center justify-between">
                 <span className="font-serif-display text-xl">MAISON</span>

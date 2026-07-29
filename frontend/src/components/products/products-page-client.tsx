@@ -156,7 +156,7 @@ export function ProductsPageClient() {
 
   return (
     <div className="container-page py-10 md:py-14">
-      <div className="mb-8 flex items-end justify-between">
+      <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-walnut">
             {filters.q ? `Results for "${filters.q}"` : "Shop All"}
