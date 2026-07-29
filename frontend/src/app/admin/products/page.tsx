@@ -97,7 +97,7 @@ export default function AdminProductsPage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <h1 className="font-serif-display text-2xl">Products</h1>
           <p className="mt-1 text-sm text-foreground/60">Manage your product catalog.</p>
@@ -110,7 +110,7 @@ export default function AdminProductsPage() {
               setSearchInput(e.target.value);
               setPage(1);
             }}
-            className="w-64"
+            className="w-40 sm:w-64"
           />
           <Link href="/admin/products/new" className={cn(buttonVariants(), "gap-1.5")}>
             <Plus size={16} /> New Product
